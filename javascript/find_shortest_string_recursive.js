@@ -1,5 +1,12 @@
 function findShortestStringRecursive(arr) {
-  // type your code here
+    let shortest = arr[0];
+    return short_util(arr, shortest, 0);
+}
+
+const short_util = (arr, shortest, i) => {
+    if (i === arr.length) return shortest;
+    if (arr[i].length < shortest.length) shortest = arr[i];
+    return short_util(arr, shortest, i + 1);
 }
 
 if (require.main === module) {
